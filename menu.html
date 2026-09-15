@@ -521,6 +521,39 @@
     .foot p.blurb{margin-left:auto;margin-right:auto;}
     .foot-bottom{justify-content:center;text-align:center;}
   }
+
+  /* ============ MOBILE HEADER: compact + order button ============ */
+  .nav-order{display:none;}
+  @media (max-width:860px){
+    .nav{padding-top:7px;padding-bottom:7px;}
+    .logo{height:36px;}
+    .nav-right{gap:10px;}
+    .nav-right .nav-phone{display:none;}
+    .nav-order{display:inline-flex;align-items:center;min-height:36px;padding:0 14px;
+      background:var(--orange);color:#fff;font-family:'Montserrat',sans-serif;font-size:.64rem;
+      font-weight:500;letter-spacing:.16em;text-transform:uppercase;-webkit-tap-highlight-color:transparent;}
+    .navlinks{inset:52px 0 auto;}
+  }
+
+  /* ============ COMPACT FOOTER LINK ROWS ============ */
+  .foot{grid-template-columns:1.5fr 1fr;padding-bottom:34px;}
+  .foot-links{display:flex;justify-content:space-between;align-items:center;gap:14px 30px;
+    flex-wrap:wrap;padding:18px 0 6px;}
+  .foot-row{display:flex;align-items:center;gap:6px 18px;flex-wrap:wrap;}
+  .foot-row a{display:inline;line-height:1.6;font-size:.86rem;}
+  .foot-tag{font-family:'Montserrat',sans-serif;font-size:.62rem;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--brass-lite);margin-right:6px;}
+  @media (max-width:860px){
+    .foot-links{flex-direction:column;align-items:center;}
+    .foot-row{justify-content:center;}
+  }
+
+  /* ============ MENU EXTRAS ============ */
+  a.card{color:inherit;cursor:pointer;transition:border-color .3s,transform .3s;}
+  a.card:hover{border-color:var(--brass-lite);transform:translateY(-2px);}
+  .card-name small{font-size:.68em;font-weight:400;letter-spacing:.06em;color:var(--muted-d);}
+  .menu-note{font-family:'Montserrat',sans-serif;font-size:.76rem;line-height:1.9;color:var(--muted-d);
+    margin:-6px 0 22px;max-width:72ch;}
 </style>
 </head>
 <body id="top">
@@ -535,8 +568,9 @@
     </nav>
     <div class="nav-right">
       <a class="nav-phone" href="tel:3602255000">360-225-5000</a>
-      <a class="nav-cta" href="tel:3602255000">Order Online</a>
-      <button class="navtoggle" id="navtoggle" aria-expanded="false" aria-controls="navlinks">Menu</button>
+      <a class="nav-cta" href="https://order.toasttab.com/online/woodland-corner-store-1697-lewis-river-road" target="_blank" rel="noopener">Order Online</a>
+      <a class="nav-order" href="https://order.toasttab.com/online/woodland-corner-store-1697-lewis-river-road" target="_blank" rel="noopener">Order Now</a>
+      <button class="navtoggle" id="navtoggle" aria-expanded="false" aria-controls="navlinks" aria-label="Open navigation">&#9776;</button>
     </div>
   </div>
 </header>
@@ -559,192 +593,433 @@
     <div class="tabs" role="tablist" aria-label="Menu categories">
       <button class="tab" role="tab" id="tab-sandwiches" aria-controls="panel-sandwiches" aria-selected="true">Sandwiches</button>
       <button class="tab" role="tab" id="tab-pizza" aria-controls="panel-pizza" aria-selected="false">Pizza</button>
-      <button class="tab" role="tab" id="tab-salads" aria-controls="panel-salads" aria-selected="false">Salads</button>
-      <button class="tab" role="tab" id="tab-sides" aria-controls="panel-sides" aria-selected="false">Sides</button>
-      <button class="tab" role="tab" id="tab-sweets" aria-controls="panel-sweets" aria-selected="false">Sweets</button>
+      <button class="tab" role="tab" id="tab-soups" aria-controls="panel-soups" aria-selected="false">Soups &amp; Salads</button>
+      <button class="tab" role="tab" id="tab-drinks" aria-controls="panel-drinks" aria-selected="false">Drinks</button>
     </div>
+
+    <p class="menu-note">Every sandwich includes a bag of chips or an apple &middot; Bread: white, wheat, sourdough, hoagie, wrap, or gluten free &middot; Pizza on Kalama sourdough &mdash; gluten free +$4, focaccia +$6.50</p>
 
     <div class="cards" role="tabpanel" id="panel-sandwiches" aria-labelledby="tab-sandwiches">
       <article class="card">
         <div>
-          <h3 class="card-name">Bigfoot</h3>
-          <p class="card-desc">Boar's Head ham, pepperoni, prosciutto, salami, capocollo, provolone, lettuce, red onion, tomato, Italian mayo</p>
-          <p class="card-price">$16.99</p>
+          <h3 class="card-name">Corner Club</h3>
+          <p class="card-desc">Ham, turkey, bacon, lettuce, Swiss, tomato, Italian mayo</p>
+          <p class="card-price">$16.26</p>
         </div>
-        <button class="card-add" aria-label="Add Bigfoot to your order">+</button>
+        <span class="card-add" aria-hidden="true">+</span>
+      </article>
+      <a class="card" href="https://order.toasttab.com/online/woodland-corner-store-1697-lewis-river-road/item-bigfoot_2a56e0a7-080d-450b-8b7f-ad4a6c781c95" target="_blank" rel="noopener">
+        <div>
+          <h3 class="card-name">Bigfoot</h3>
+          <p class="card-desc">Ham, pepperoni, salami, prosciutto, capocollo, provolone, lettuce, onion, tomato, Italian mayo</p>
+          <p class="card-price">$16.89</p>
+        </div>
+        <span class="card-add" aria-hidden="true">&#8599;</span>
+      </a>
+      <article class="card">
+        <div>
+          <h3 class="card-name">Eruption <small>(Toasted)</small></h3>
+          <p class="card-desc">Turkey, orange cranberry sauce, deli mustard, cream cheese, lettuce</p>
+          <p class="card-price">$13.84</p>
+        </div>
+        <span class="card-add" aria-hidden="true">+</span>
       </article>
       <article class="card">
         <div>
-          <h3 class="card-name">Corner Club</h3>
-          <p class="card-desc">Ovengold turkey and Black Forest ham, bacon, Switzerland Swiss, tomato, lettuce, house made spread</p>
-          <p class="card-price">$16.89</p>
+          <h3 class="card-name">Cascade <small>(Toasted)</small></h3>
+          <p class="card-desc">Ham, huckleberry pepper jelly, cream cheese, lettuce</p>
+          <p class="card-price">$13.84</p>
         </div>
-        <button class="card-add" aria-label="Add Corner Club to your order">+</button>
+        <span class="card-add" aria-hidden="true">+</span>
       </article>
       <article class="card">
         <div>
           <h3 class="card-name">Chicken Bacon Ranch</h3>
-          <p class="card-desc">Firesmith chicken, bacon, provolone, Vermont cheddar and ranch, pressed hot on Kalama sourdough</p>
-          <p class="card-price">$16.79</p>
+          <p class="card-desc">Chicken, bacon, ranch, provolone, Vermont cheddar</p>
+          <p class="card-price">$16.25</p>
         </div>
-        <button class="card-add" aria-label="Add Chicken Bacon Ranch to your order">+</button>
+        <span class="card-add" aria-hidden="true">+</span>
       </article>
       <article class="card">
         <div>
-          <h3 class="card-name">Build Your Own</h3>
-          <p class="card-desc">Two meats, two vegetables, your choice of sauce and cheese, on the bread you want</p>
-          <p class="card-price">$16.29</p>
+          <h3 class="card-name">Reuben <small>(Panini Pressed)</small></h3>
+          <p class="card-desc">Corned beef, sauerkraut, rye bread, Russian dressing, Switzerland Swiss</p>
+          <p class="card-price">$15.64</p>
         </div>
-        <button class="card-add" aria-label="Add Build Your Own to your order">+</button>
+        <span class="card-add" aria-hidden="true">+</span>
       </article>
       <article class="card">
         <div>
           <h3 class="card-name">Caprese Wrap</h3>
-          <p class="card-desc">Fresh tomato, sliced mozzarella, basil and spring mix</p>
-          <p class="card-price">$13.99</p>
+          <p class="card-desc">Layered mozzarella, tomato slices, spring mix, basil, balsamic glaze</p>
+          <p class="card-price">$12.76</p>
         </div>
-        <button class="card-add" aria-label="Add Caprese Wrap to your order">+</button>
+        <span class="card-add" aria-hidden="true">+</span>
       </article>
       <article class="card">
         <div>
-          <h3 class="card-name">Cascade</h3>
-          <p class="card-desc">Boar's Head ham, jalapeño pepper jelly, cream cheese and lettuce, toasted</p>
-          <p class="card-price">$13.99</p>
+          <h3 class="card-name">Gorge</h3>
+          <p class="card-desc">Spring mix, red bell pepper, red onion, tomato, cucumber, avocado, feta, hummus, olive oil, salt, pepper</p>
+          <p class="card-price">$14.89</p>
         </div>
-        <button class="card-add" aria-label="Add Cascade to your order">+</button>
+        <span class="card-add" aria-hidden="true">+</span>
       </article>
       <article class="card">
         <div>
-          <h3 class="card-name">BLT</h3>
-          <p class="card-desc">Fresh cut tomato, leafy lettuce, mayo and Boar's Head bacon on toasted bread</p>
-          <p class="card-price">$13.55</p>
+          <h3 class="card-name">Lewis</h3>
+          <p class="card-desc">Roast beef, onion, balsamic aioli, mozzarella, horseradish mayonnaise</p>
+          <p class="card-price">$16.89</p>
         </div>
-        <button class="card-add" aria-label="Add BLT to your order">+</button>
+        <span class="card-add" aria-hidden="true">+</span>
       </article>
       <article class="card">
         <div>
-          <h3 class="card-name">Half Build Your Own</h3>
-          <p class="card-desc">Two meats, two vegetables, choice of sauce, one slice of Boar's Head cheese</p>
-          <p class="card-price">$8.49</p>
+          <h3 class="card-name">PB&amp;J Double Decker</h3>
+          <p class="card-desc">Creamy peanut butter, WCS jelly</p>
+          <p class="card-price">$11.49</p>
         </div>
-        <button class="card-add" aria-label="Add Half Build Your Own to your order">+</button>
+        <span class="card-add" aria-hidden="true">+</span>
+      </article>
+      <article class="card">
+        <div>
+          <h3 class="card-name">Add-Ons</h3>
+          <p class="card-desc">Avocado, bacon, double one meat, or double one cheese +$2.00 &middot; additional vegetable toppings $0.25 each</p>
+        </div>
+        <span class="card-add" aria-hidden="true">+</span>
       </article>
     </div>
+
     <div class="cards" role="tabpanel" id="panel-pizza" aria-labelledby="tab-pizza" hidden>
       <article class="card">
         <div>
-          <h3 class="card-name">Build Your Own Pizza</h3>
-          <p class="card-desc">Kalama sourdough crust, your sauce, cheese and toppings, fired to order</p>
-          <p class="card-price">$16.89</p>
+          <h3 class="card-name">Build Your Own</h3>
+          <p class="card-desc">Two meats and two vegetables, your call</p>
+          <p class="card-price">12&quot; $24.89 &middot; 16&quot; $34.89</p>
         </div>
-        <button class="card-add" aria-label="Add Build Your Own Pizza to your order">+</button>
+        <span class="card-add" aria-hidden="true">+</span>
+      </article>
+      <article class="card">
+        <div>
+          <h3 class="card-name">Cheese</h3>
+          <p class="card-desc">Mozzarella, gouda</p>
+          <p class="card-price">12&quot; $20.89 &middot; 16&quot; $30.89</p>
+        </div>
+        <span class="card-add" aria-hidden="true">+</span>
       </article>
       <article class="card">
         <div>
           <h3 class="card-name">Pepperoni</h3>
-          <p class="card-desc">Red sauce, mozzarella and a generous hand with the pepperoni</p>
-          <p class="card-price">$15.99</p>
+          <p class="card-desc">Pepperoni slices</p>
+          <p class="card-price">12&quot; $21.95 &middot; 16&quot; $31.95</p>
         </div>
-        <button class="card-add" aria-label="Add Pepperoni to your order">+</button>
+        <span class="card-add" aria-hidden="true">+</span>
       </article>
       <article class="card">
         <div>
-          <h3 class="card-name">Margherita</h3>
-          <p class="card-desc">Red sauce, fresh mozzarella, basil and olive oil</p>
-          <p class="card-price">$15.49</p>
+          <h3 class="card-name">Taco</h3>
+          <p class="card-desc">Salsa, cheddar, beef, olives, lettuce</p>
+          <p class="card-price">12&quot; $23.89 &middot; 16&quot; $33.89</p>
         </div>
-        <button class="card-add" aria-label="Add Margherita to your order">+</button>
+        <span class="card-add" aria-hidden="true">+</span>
       </article>
       <article class="card">
         <div>
-          <h3 class="card-name">Gluten-Free Crust</h3>
-          <p class="card-desc">Any pizza on the board, built on a gluten-free base</p>
-          <p class="card-price">$3.00</p>
+          <h3 class="card-name">Hawaiian</h3>
+          <p class="card-desc">Canadian bacon, pineapple</p>
+          <p class="card-price">12&quot; $22.99 &middot; 16&quot; $32.99</p>
         </div>
-        <button class="card-add" aria-label="Add Gluten-Free Crust to your order">+</button>
+        <span class="card-add" aria-hidden="true">+</span>
+      </article>
+      <article class="card">
+        <div>
+          <h3 class="card-name">Meatlovers</h3>
+          <p class="card-desc">Pepperoni, sausage, salami, bacon</p>
+          <p class="card-price">12&quot; $24.89 &middot; 16&quot; $34.89</p>
+        </div>
+        <span class="card-add" aria-hidden="true">+</span>
+      </article>
+      <article class="card">
+        <div>
+          <h3 class="card-name">Sweet N Spicy</h3>
+          <p class="card-desc">Pepperoni, pineapple, jalape&ntilde;o, bacon</p>
+          <p class="card-price">12&quot; $23.89 &middot; 16&quot; $33.89</p>
+        </div>
+        <span class="card-add" aria-hidden="true">+</span>
+      </article>
+      <article class="card">
+        <div>
+          <h3 class="card-name">BBQ Chicken</h3>
+          <p class="card-desc">BBQ sauce, diced chicken, bacon, red onion</p>
+          <p class="card-price">12&quot; $23.89 &middot; 16&quot; $33.89</p>
+        </div>
+        <span class="card-add" aria-hidden="true">+</span>
+      </article>
+      <article class="card">
+        <div>
+          <h3 class="card-name">Supreme</h3>
+          <p class="card-desc">Pepperoni, sausage, salami, bacon, black olives, shiitake mushroom, green bell peppers</p>
+          <p class="card-price">12&quot; $26.89 &middot; 16&quot; $36.89</p>
+        </div>
+        <span class="card-add" aria-hidden="true">+</span>
+      </article>
+      <article class="card">
+        <div>
+          <h3 class="card-name">Sasquatch</h3>
+          <p class="card-desc">Alfredo, onion balsamic aioli, mozzarella, horseradish, diced London broil</p>
+          <p class="card-price">12&quot; $36.89 &middot; 16&quot; $36.89</p>
+        </div>
+        <span class="card-add" aria-hidden="true">+</span>
+      </article>
+      <article class="card">
+        <div>
+          <h3 class="card-name">Saint Helens</h3>
+          <p class="card-desc">Alfredo, diced chicken, bacon, green onions, red pepper flakes, garlic</p>
+          <p class="card-price">12&quot; $23.89 &middot; 16&quot; $33.89</p>
+        </div>
+        <span class="card-add" aria-hidden="true">+</span>
+      </article>
+      <article class="card">
+        <div>
+          <h3 class="card-name">Chicken Bacon Ranch</h3>
+          <p class="card-desc">Diced chicken, ranch, tomato, cheddar, green onion, bacon</p>
+          <p class="card-price">12&quot; $24.89 &middot; 16&quot; $34.89</p>
+        </div>
+        <span class="card-add" aria-hidden="true">+</span>
+      </article>
+      <article class="card">
+        <div>
+          <h3 class="card-name">Vege Supreme</h3>
+          <p class="card-desc">Green bell pepper, olives, red onion, mushroom, spinach, tomato</p>
+          <p class="card-price">12&quot; $23.89 &middot; 16&quot; $33.89</p>
+        </div>
+        <span class="card-add" aria-hidden="true">+</span>
+      </article>
+      <article class="card">
+        <div>
+          <h3 class="card-name">Pickle</h3>
+          <p class="card-desc">Alfredo white sauce, crispy bacon, pickles</p>
+          <p class="card-price">Ask at the counter</p>
+        </div>
+        <span class="card-add" aria-hidden="true">+</span>
+      </article>
+      <article class="card">
+        <div>
+          <h3 class="card-name">Half N Half</h3>
+          <p class="card-desc">Want choices? Choose half and half from our pizza selection</p>
+          <p class="card-price">12&quot; $23.89 &middot; 16&quot; $33.89</p>
+        </div>
+        <span class="card-add" aria-hidden="true">+</span>
+      </article>
+      <article class="card">
+        <div>
+          <h3 class="card-name">Buffalo Chicken</h3>
+          <p class="card-desc">Ranch and buffalo sauce, green onion, garlic, diced chicken, bacon</p>
+          <p class="card-price">12&quot; $23.89 &middot; 16&quot; $33.89</p>
+        </div>
+        <span class="card-add" aria-hidden="true">+</span>
+      </article>
+      <article class="card">
+        <div>
+          <h3 class="card-name">Breadsticks</h3>
+          <p class="card-desc">Garlic buttered parmesan</p>
+          <p class="card-price">4 for $5 &middot; 8 for $10</p>
+        </div>
+        <span class="card-add" aria-hidden="true">+</span>
+      </article>
+      <article class="card">
+        <div>
+          <h3 class="card-name">Dipping Sauces</h3>
+          <p class="card-desc">Ranch or marinara</p>
+          <p class="card-price">$0.50</p>
+        </div>
+        <span class="card-add" aria-hidden="true">+</span>
       </article>
     </div>
-    <div class="cards" role="tabpanel" id="panel-salads" aria-labelledby="tab-salads" hidden>
+
+    <div class="cards" role="tabpanel" id="panel-soups" aria-labelledby="tab-soups" hidden>
       <article class="card">
         <div>
-          <h3 class="card-name">Garden Salad</h3>
-          <p class="card-desc">Spring mix, tomato, cucumber, red onion and your choice of dressing</p>
-          <p class="card-price">$9.99</p>
+          <h3 class="card-name">Chicken Dumpling</h3>
+          <p class="card-desc">Made fresh daily</p>
+          <p class="card-price">Cup $3.99 &middot; Bowl $5.99</p>
         </div>
-        <button class="card-add" aria-label="Add Garden Salad to your order">+</button>
+        <span class="card-add" aria-hidden="true">+</span>
       </article>
       <article class="card">
         <div>
-          <h3 class="card-name">Chef Salad</h3>
-          <p class="card-desc">Spring mix with Boar's Head turkey, ham, Swiss and cheddar</p>
+          <h3 class="card-name">Chicken Tortilla</h3>
+          <p class="card-desc">Made fresh daily</p>
+          <p class="card-price">Cup $3.99 &middot; Bowl $5.99</p>
+        </div>
+        <span class="card-add" aria-hidden="true">+</span>
+      </article>
+      <article class="card">
+        <div>
+          <h3 class="card-name">Broccoli Cheddar</h3>
+          <p class="card-desc">Made fresh daily</p>
+          <p class="card-price">Cup $3.99 &middot; Bowl $5.99</p>
+        </div>
+        <span class="card-add" aria-hidden="true">+</span>
+      </article>
+      <article class="card">
+        <div>
+          <h3 class="card-name">Texas Chili</h3>
+          <p class="card-desc">Made fresh daily</p>
+          <p class="card-price">Cup $5.99 &middot; Bowl $7.99</p>
+        </div>
+        <span class="card-add" aria-hidden="true">+</span>
+      </article>
+      <article class="card">
+        <div>
+          <h3 class="card-name">Clam Chowder</h3>
+          <p class="card-desc">Made fresh daily</p>
+          <p class="card-price">Cup $3.99 &middot; Bowl $5.99</p>
+        </div>
+        <span class="card-add" aria-hidden="true">+</span>
+      </article>
+      <article class="card">
+        <div>
+          <h3 class="card-name">Tomato Basil</h3>
+          <p class="card-desc">Made fresh daily</p>
+          <p class="card-price">Cup $3.99 &middot; Bowl $5.99</p>
+        </div>
+        <span class="card-add" aria-hidden="true">+</span>
+      </article>
+      <article class="card">
+        <div>
+          <h3 class="card-name">Baked Potato</h3>
+          <p class="card-desc">Made fresh daily</p>
+          <p class="card-price">Cup $3.99 &middot; Bowl $5.99</p>
+        </div>
+        <span class="card-add" aria-hidden="true">+</span>
+      </article>
+      <article class="card">
+        <div>
+          <h3 class="card-name">Seasonal Salad</h3>
+          <p class="card-desc">Spring mix, crushed pecan, Cosmic Crisp apple, goat cheese</p>
+          <p class="card-price">$13.89</p>
+        </div>
+        <span class="card-add" aria-hidden="true">+</span>
+      </article>
+      <article class="card">
+        <div>
+          <h3 class="card-name">Caesar Salad</h3>
+          <p class="card-desc">Romaine, parmesan, croutons</p>
           <p class="card-price">$13.49</p>
         </div>
-        <button class="card-add" aria-label="Add Chef Salad to your order">+</button>
-      </article>
-      <article class="card">
-        <div>
-          <h3 class="card-name">Soup of the Day</h3>
-          <p class="card-desc">Made in-house and rotating through the week — ask what's on</p>
-          <p class="card-price">$6.49</p>
-        </div>
-        <button class="card-add" aria-label="Add Soup of the Day to your order">+</button>
+        <span class="card-add" aria-hidden="true">+</span>
       </article>
     </div>
-    <div class="cards" role="tabpanel" id="panel-sides" aria-labelledby="tab-sides" hidden>
+
+    <div class="cards" role="tabpanel" id="panel-drinks" aria-labelledby="tab-drinks" hidden>
       <article class="card">
         <div>
-          <h3 class="card-name">Kettle Chips</h3>
-          <p class="card-desc">A bag from the rack to round out the sandwich</p>
-          <p class="card-price">$2.49</p>
+          <h3 class="card-name">Americano</h3>
+          <p class="card-desc">Hot 12/16/20 oz &mdash; $2.60 / $3.30 / $3.70 &middot; Iced 16/20 oz &mdash; $3.10 / $3.70</p>
+          <p class="card-price">from $2.60</p>
         </div>
-        <button class="card-add" aria-label="Add Kettle Chips to your order">+</button>
+        <span class="card-add" aria-hidden="true">+</span>
       </article>
       <article class="card">
         <div>
-          <h3 class="card-name">House Pasta Salad</h3>
-          <p class="card-desc">Made fresh in the deli case</p>
-          <p class="card-price">$4.99</p>
+          <h3 class="card-name">Latte</h3>
+          <p class="card-desc">Hot 12/16/20 oz &mdash; $4.35 / $5.45 / $5.95 &middot; Iced 16/20 oz &mdash; $5.45 / $5.95</p>
+          <p class="card-price">from $4.35</p>
         </div>
-        <button class="card-add" aria-label="Add House Pasta Salad to your order">+</button>
+        <span class="card-add" aria-hidden="true">+</span>
       </article>
       <article class="card">
         <div>
-          <h3 class="card-name">Pickle Spear</h3>
-          <p class="card-desc">Straight from the barrel</p>
-          <p class="card-price">$1.99</p>
+          <h3 class="card-name">Mocha</h3>
+          <p class="card-desc">Hot 12/16/20 oz &mdash; $4.45 / $5.45 / $6.00 &middot; Iced 16/20 oz &mdash; $5.70 / $6.45</p>
+          <p class="card-price">from $4.45</p>
         </div>
-        <button class="card-add" aria-label="Add Pickle Spear to your order">+</button>
-      </article>
-    </div>
-    <div class="cards" role="tabpanel" id="panel-sweets" aria-labelledby="tab-sweets" hidden>
-      <article class="card">
-        <div>
-          <h3 class="card-name">Gelato</h3>
-          <p class="card-desc">Scooped to order, flavors rotate through the season</p>
-          <p class="card-price">$5.49</p>
-        </div>
-        <button class="card-add" aria-label="Add Gelato to your order">+</button>
+        <span class="card-add" aria-hidden="true">+</span>
       </article>
       <article class="card">
         <div>
-          <h3 class="card-name">Ice Cream Cone</h3>
-          <p class="card-desc">Single or double scoop, cone or cup</p>
-          <p class="card-price">$4.49</p>
+          <h3 class="card-name">Cappuccino</h3>
+          <p class="card-desc">Hot 12/16/20 oz &mdash; $3.55 / $4.30 / $4.90 &middot; Iced 16/20 oz &mdash; $4.30 / $4.90</p>
+          <p class="card-price">from $3.55</p>
         </div>
-        <button class="card-add" aria-label="Add Ice Cream Cone to your order">+</button>
+        <span class="card-add" aria-hidden="true">+</span>
       </article>
       <article class="card">
         <div>
-          <h3 class="card-name">Bakery Case</h3>
-          <p class="card-desc">Cookies and pastries, baked and set out each morning</p>
-          <p class="card-price">$3.99</p>
+          <h3 class="card-name">Caramel Macchiato</h3>
+          <p class="card-desc">Hot 12/16/20 oz &mdash; $4.50 / $5.45 / $5.95 &middot; Iced 16/20 oz &mdash; $5.45 / $6.45</p>
+          <p class="card-price">from $4.50</p>
         </div>
-        <button class="card-add" aria-label="Add Bakery Case to your order">+</button>
+        <span class="card-add" aria-hidden="true">+</span>
+      </article>
+      <article class="card">
+        <div>
+          <h3 class="card-name">Frappuccino</h3>
+          <p class="card-desc">16 oz $5.70 &middot; 20 oz $6.45, hot or iced</p>
+          <p class="card-price">from $5.70</p>
+        </div>
+        <span class="card-add" aria-hidden="true">+</span>
+      </article>
+      <article class="card">
+        <div>
+          <h3 class="card-name">Hot Cocoa</h3>
+          <p class="card-desc">12/16/20 oz &mdash; $3.36 / $3.75 / $4.09</p>
+          <p class="card-price">from $3.36</p>
+        </div>
+        <span class="card-add" aria-hidden="true">+</span>
+      </article>
+      <article class="card">
+        <div>
+          <h3 class="card-name">Black Tea</h3>
+          <p class="card-desc">Hot 12/16/20 oz &mdash; $2.95 / $3.30 / $3.70 &middot; Iced 16/20 oz &mdash; $3.30 / $3.70</p>
+          <p class="card-price">from $2.95</p>
+        </div>
+        <span class="card-add" aria-hidden="true">+</span>
+      </article>
+      <article class="card">
+        <div>
+          <h3 class="card-name">Spiced Chai</h3>
+          <p class="card-desc">Hot 12/16/20 oz &mdash; $4.23 / $4.82 / $5.10 &middot; Iced 16/20 oz &mdash; $5.10</p>
+          <p class="card-price">from $4.23</p>
+        </div>
+        <span class="card-add" aria-hidden="true">+</span>
+      </article>
+      <article class="card">
+        <div>
+          <h3 class="card-name">Vanilla Chai</h3>
+          <p class="card-desc">Hot 12/16/20 oz &mdash; $4.23 / $4.82 / $5.10 &middot; Iced 16/20 oz &mdash; $5.10</p>
+          <p class="card-price">from $4.23</p>
+        </div>
+        <span class="card-add" aria-hidden="true">+</span>
+      </article>
+      <article class="card">
+        <div>
+          <h3 class="card-name">Italian Soda</h3>
+          <p class="card-desc">16 oz $4.09 &middot; 20 oz $4.57</p>
+          <p class="card-price">from $4.09</p>
+        </div>
+        <span class="card-add" aria-hidden="true">+</span>
+      </article>
+      <article class="card">
+        <div>
+          <h3 class="card-name">Energy Drink</h3>
+          <p class="card-desc">Monster, Red Bull, or sugar-free Red Bull &mdash; 16 oz $4.40 &middot; 20 oz $5.05</p>
+          <p class="card-price">from $4.40</p>
+        </div>
+        <span class="card-add" aria-hidden="true">+</span>
+      </article>
+      <article class="card">
+        <div>
+          <h3 class="card-name">Add a Flavor</h3>
+          <p class="card-desc">Vanilla, caramel, hazelnut, mocha, white chocolate, or sugar-free vanilla &mdash; any drink</p>
+          <p class="card-price">$0.75</p>
+        </div>
+        <span class="card-add" aria-hidden="true">+</span>
       </article>
     </div>
 
     <div class="menu-foot">
-      <a class="btn btn-orange" href="#visit">Order for Pickup</a>
+      <a class="btn btn-orange" href="https://order.toasttab.com/online/woodland-corner-store-1697-lewis-river-road" target="_blank" rel="noopener">Order for Pickup</a>
     </div>
   </div>
 </section>
@@ -784,29 +1059,31 @@
       <p class="blurb">Your neighborhood deli, market, and pizza counter in Woodland, Washington.</p>
     </div>
     <div>
-      <h5>Explore</h5>
+      <h5>Visit</h5>
+      <p class="fp">1697 Lewis River Rd<br>Woodland, WA 98674</p>
+      <a href="tel:3602255000">360-225-5000</a>
+    </div>
+  </div>
+  <div class="wrap"><hr class="hair hair-d"></div>
+  <div class="wrap foot-links">
+    <nav class="foot-row" aria-label="Follow">
+      <span class="foot-tag">Follow</span>
+      <a href="#">Instagram</a>
+      <a href="#">Facebook</a>
+      <a href="#">Leave a Review</a>
+    </nav>
+    <nav class="foot-row foot-explore" aria-label="Explore">
+      <span class="foot-tag">Explore</span>
       <a href="index.html">Home</a>
       <a href="menu.html">Menu</a>
       <a href="index.html#catering">Catering</a>
       <a href="events.html">Event Space</a>
       <a href="index.html#visit">Contact Us</a>
-    </div>
-    <div>
-      <h5>Visit</h5>
-      <p class="fp">1697 Lewis River Rd<br>Woodland, WA 98674</p>
-      <a href="tel:3602255000">360-225-5000</a>
-    </div>
-    <div>
-      <h5>Follow</h5>
-      <a href="#">Instagram</a>
-      <a href="#">Facebook</a>
-      <a href="#">Leave a Review</a>
-    </div>
+    </nav>
   </div>
-  <div class="wrap"><hr class="hair hair-d"></div>
   <div class="wrap foot-bottom">
     <span>&copy; 2026 The Woodland Corner Store</span>
-    <span>1697 Lewis River Road · Woodland, WA</span>
+    <span>1697 Lewis River Road &middot; Woodland, WA</span>
   </div>
 </footer>
 
@@ -822,10 +1099,10 @@ if (tog && links) {
   tog.addEventListener('click',()=>{
     const open = links.classList.toggle('open');
     tog.setAttribute('aria-expanded', open);
-    tog.textContent = open ? 'Close' : 'Menu';
+    tog.innerHTML = open ? '&#10005;' : '&#9776;';
   });
   links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
-    links.classList.remove('open'); tog.setAttribute('aria-expanded','false'); tog.textContent='Menu';
+    links.classList.remove('open'); tog.setAttribute('aria-expanded','false'); tog.innerHTML='&#9776;';
   }));
 }
 
